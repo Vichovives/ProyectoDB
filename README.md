@@ -18,7 +18,7 @@ Falta excedentes (no influye en lo demás, solamente se relaciona con cliente)
 * Las facturas se identifican por el número de folio. Además estas tienen atributos, como; rut_deudor, razon_social_deudor, fecha_emision, monto, estado_sii. _(Estas facturas sólo estarán en la BD de desarrollo, ya que, luego esta información se sacará del SII)_.
 * Al momento de que el cliente decida solicitar la cesión de una o más facturas se creará una solicitud de cesión que se identificará con un uuid.UUID, esta entidad poseerá como atributos; monto_total de todas las facturas a ceder, un estado_altus (Aceptado, Pendiente, Rechazado);
 * Las facturas se identificarán por su número de folio, y tendrán como atributos, rut_deudor, razon_social_deudor, fecha_emision, monto, estado_altus, estado_sii. 
-
+* Cada cliente tiene un registro de operaciones, identificado por el ID del cliente y tiene como atributos número de factura, gasto operacional, monto, mora y fecha.
 
 ## Modelos ER - Modelo Relacional
 
