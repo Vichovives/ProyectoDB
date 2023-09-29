@@ -1,0 +1,26 @@
+
+Grupo: 
+ - Franco Cattani (Sección 1)
+ - Jorge Espinosa (Sección 1)
+ - Nicolás del Valle (Sección 1)
+ - Vicente Vives (Sección 1)
+
+Fuente de datos:
+ - https://www.kaggle.com/datasets/prakharjadaun/employee-data
+   -> Se contactarán a las empresas mediante un empleado de esta.
+
+ - https://datos.gob.cl/dataset/registro-de-empresas-y-sociedades
+   -> Los clientes y deudores son empresas.
+
+ - https://www.kaggle.com/datasets/gabrielramos87/an-online-shop-business
+   -> Los documentos a ceder serán los productos.
+
+ - https://view.officeapps.live.com/op/view.aspx src=https%3A%2F%2Frepositoriodeis.minsal.cl%2FContenidoSitioWeb2020%2Fuploads%2F2019%2F11%2FDPA2018.xls&wdOrigin=BROWSELINK
+   -> Se utilizará para filtrar por localidad a empresas.
+   
+Descripción:
+
+Los datos anteriores permitirán mejorar el rendiminento de empresas de factoring, facilitando 
+la toma de decisiones, la administración de cesiones y la cobranza de estas a través de una interfaz 
+simple y eficiente. Esto se logrará con una aplicación web que acuda a estos datos para guiar las 
+acciones que tomarán los trabajadores de las empresas de factoring y así mejorar su servicio.
