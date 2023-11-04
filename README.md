@@ -31,3 +31,6 @@ https://drive.google.com/drive/folders/1iw1QHyWRkIm11ruTLsB1kbqHd0ijWvnp?usp=sha
 
 ## Script para llenar la base de datos (compañerx Jorge, compañerx Sofii)
 
+1. Operacion: 
+
+2. 
