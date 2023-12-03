@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} Información artesano {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/informacionArtesano.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="infoArtesanoContainer">
+    <div class="infoArtesanoTitulo"> Información artesano </div>
+
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Nombre artesano(a): </div>
+            <hr>
+            <div> {{ artesano["nombre"] }}</div>
+        </div>
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Email contacto artesano(a): </div>
+            <hr>
+            <div>{{ artesano["email"] }}</div>
+        </div>
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Número celular contacto: </div>
+            <hr>
+            <div> {{ artesano["celular"] }}</div>
+        </div>
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Descripción artesanías: </div>
+            <hr>
+            <div> {{ artesano["descripcion"] }}</div>
+        </div>
+
+
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Región donde vive: </div>
+            <hr>
+            <div> {{ artesano["region"] }}</div>
+        </div>
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Comuna donde vive: </div>
+            <hr>
+            <div> {{ artesano["comuna"] }} </div>
+        </div>
+        <div class="infoArtesanoForm">
+            <div class="infoArtesanoCampo"> Tipo artesanía: </div>
+            <hr>
+            <div> {{ artesano["tipo_artesania"] }} </div>
+        </div>
+
+    <div class="infoArtesanoForm">
+        <div class="infoArtesanoCampo"> Fotos artesanías: </div>
+        <hr>
+        {% for foto in artesano["fotos"] %}
+        <img src="{{ url_for('static', filename=foto) }}" alt="Foto de artesanía">
+        {% endfor %}
+    </div>
+
+    <a class="infoArtesanoBotonEnviar" href="{{ url_for('verArtesanos') }}" type="button" id="botonVolver"> Volver </a>
+</div>
+{% endblock %}

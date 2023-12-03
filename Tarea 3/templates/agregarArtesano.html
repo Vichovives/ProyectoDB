@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %} Registrar artesano {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/agregarArtesano.css') }}">
+{% endblock %}
+
+{% block content %}
+    {% if error %}
+    <div class="error">
+        Los datos del artesano no son válidos. Por favor, verifique e inténtelo de nuevo.
+
+    </div>
+    <div class="errorBoton">
+
+        <a href="{{ url_for('agregarArtesano') }}"> Volver </a>
+    </div>
+    {% endif %}
+    {% if not error %}
+    <div class="agregarArtesanoTitulo"> Registro artesano </div>
+    <form id="agregarArtesanoContenedorFoms" name="agregarArtesanoContenedorFoms" class="agregarArtesanoContenedorFoms"
+        method="post" enctype="multipart/form-data" style="display: block">
+        <div class="agregarArtesanoSubContenedor">
+            <div class="agregarArtesanoForm">
+                <label for="nombre"> Nombre artesano(a): </label>
+                <input name="nombre" type="text" id="nombre">
+                <div class="agregarArtesanoFormError" id="errorNombre" hidden> Nombre inválido </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label for="correo"> Email contacto artesano(a): </label>
+                <input name="correo" type="email" id="correo">
+                <div class="agregarArtesanoFormError" id="errorCorreo" hidden> Correo inválido </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label for="numero"> Número celular contacto: </label>
+                <input name="numero" type="text" id="numero">
+                <div class="agregarArtesanoFormError" id="errorNumero" hidden> Número inválido </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label for="descripcion"> Descripción artesanías: </label>
+                <textarea name="descripcion" id="descripcion" rows="4" cols="50"></textarea>
+            </div>
+        </div>
+        <div class="agregarArtesanoSubContenedor">
+            <div class="agregarArtesanoForm">
+                <label for="regiones"> Región donde vive: </label>
+                <select name="region" id="regiones">
+                </select>
+                <div class="agregarArtesanoFormError" id="errorRegion" hidden> Elija una opción </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label for="comunas"> Comuna donde vive: </label>
+                <select name="comuna" id="comunas">
+                </select>
+                <div class="agregarArtesanoFormError" id="errorComuna" hidden> Elija una opción </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label for="fotos"> Fotos artesanías: </label>
+                <input type="file" name="fotos" id="fotos" multiple="multiple" accept=".png, .jpg, .jpeg, .gif"><br>
+                <div id="lista-archivos"></div>
+                <div class="agregarArtesanoFormError" id="errorFotos" hidden> Elija entre 1 o 3 fotos </div>
+            </div>
+            <div class="agregarArtesanoForm">
+                <label> Tipo artesanía: </label>
+                <div id="menuTipo">
+                    <div>
+                        <input type="checkbox" id="marmol" name="tipo_artesania" value="marmol">
+                        <label for="marmol"> Marmol </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="madera" name="tipo_artesania" value="madera">
+                        <label for="madera"> Madera </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="ceramica" name="tipo_artesania" value="ceramica">
+                        <label for="ceramica"> Cerámica </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="metal" name="tipo_artesania" value="metal">
+                        <label for="metal"> Metal </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mimbre" name="tipo_artesania" value="mimbre">
+                        <label for="mimbre"> Mimbre </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="cuero" name="tipo_artesania" value="cuero">
+                        <label for="cuero"> Cuero </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="telas" name="tipo_artesania" value="telas">
+                        <label for="telas"> Telas </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="joyas" name="tipo_artesania" value="joyas">
+                        <label for="joyas"> Joyas </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="otro" name="tipo_artesania" value="otro">
+                        <label for="otro"> Otro </label>
+                    </div>
+                </div>
+                <div class="agregarArtesanoFormError" id="errorTipo" hidden> Elija entre 1 o 3 opciones </div>
+            </div>
+
+
+        </div>
+    </form>
+    <div class="agregarArtesanoContenedorBotonEnviar">
+        <button class="agregarArtesanoBotonEnviar" type="button" id="botonEnviar" style="display: block"> Registrar
+            artesano
+        </button>
+    </div>
+
+    <div id="confirmacion" class="agregarArtesanoConfirmacion" hidden>
+        <p> ¿Confirma el registro de este artesano? </p>
+        <div class="agregarArtesanoBotonesConfirmacion">
+            <button type="submit" id="confirmarRegistro" name="confirmarRegistro"> Confirmar </button>
+            <button id="cancelarRegistro"> Volver al formulario </button>
+        </div>
+    </div>
+
+    <div id="formEnviado" class="agregarArtesanoEnviado">
+        <p> Hemos recibido el registro de artesano. Muchas gracias. </p>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block javascript %}
+<script src="../static/js/agregarArtesano.js"></script>
+{% endblock %}

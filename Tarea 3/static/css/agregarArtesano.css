@@ -1,0 +1,207 @@
+body {
+    align-items: center;
+    text-align: center;
+    background-color: rgb(4, 112, 254);
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    margin: 0px;
+    min-height: 100vh;
+}
+
+button {
+    all: unset;
+    background-color: white;
+    color: rgb(47, 46, 46);
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none
+}
+
+.globalHeader {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 20px 0; 
+    margin: 0; 
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.globalHeaderTitulo {
+    padding-top: 45px;
+    font-size: 30px;
+}
+
+.globalFooterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: black;
+    padding-top: 80px;
+    bottom: 0;
+}
+
+.globalFooter {
+    text-align: center; 
+}
+
+.globalFooterFoto {
+    width: 360px;
+    height: 200px;
+}
+
+.agregarArtesanoContenedor {
+    width: 100%;
+    min-height: 1000px;
+}
+
+.agregarArtesanoTitulo {
+    font-size: 40px;
+    margin-top: 5%;
+}
+
+.agregarArtesanoContenedorFoms {
+    margin: 20px;
+    display: inline-flex;
+    font-size: 20px;
+    height: 650px;
+}
+
+.agregarArtesanoSubContenedor {
+    margin: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.agregarArtesanoForm {
+    margin: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left !important;
+}
+
+.agregarArtesanoFormError {
+    font-size: 15px;
+    color: red;
+    padding: 5px;
+}
+
+.agregarArtesanoContenedorBotonEnviar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#menuTipo {
+    max-height: 150px;
+    overflow-y: auto;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.agregarArtesanoBotonesConfirmacion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.agregarArtesanoConfirmacion {
+    min-height: 1000px;
+    margin-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 50vh;
+}
+
+.agregarArtesanoEnviado {
+    min-height: 1000px;
+    margin-top: 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agregarArtesanoBotonVolver {
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.agregarArtesanoBotonVolver:hover {
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.error {
+    font-size: 25px !important;
+    margin-top: 300px;
+    margin-bottom: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.errorBoton {
+    display: flex;
+    margin-bottom: 300px;
+    font-size: 20px;
+    justify-content: center;
+}
+
+a {
+    background-color: white;
+    color: rgb(47, 46, 46);
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+    width: 100px;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none;
+    width: 100px;
+}
+
+.fotoHeader {
+    background-color: black;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}
+
+.fotoHeader:hover {
+    text-decoration: none !important;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}

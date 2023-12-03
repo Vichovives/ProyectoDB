@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %} Ver artesanos {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/verArtesanos.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="verArtesanosContenedor">
+    <div class="verArtesanosMensajeTitulo">
+        Lista de artesanos registrados:
+    </div>
+    <div class="verArtesanosContenedorTabla">
+        <table>
+            <thead>
+                <tr class="verArtesanosTituloTabla">
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Comuna</th>
+                    <th>Tipo Artesanías</th>
+                    <th>Fotos</th>
+                </tr>
+            </thead>
+            {% for artesano in artesanos %}
+            <tr data-href="{{ url_for('informacionArtesano', id=artesano[5]) }}">
+                <td>{{ artesano[0] }}</td> 
+                <td>{{ artesano[1] }}</td>
+                <td>{{ artesano[2] }}</td> 
+                        <td>
+                    {% for artesania in artesano[3] %}
+                    {{ artesania }}
+                    {% if not loop.last %}, {% endif %} 
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for foto_url in artesano[4] %}
+                    <img src="{{ url_for('static', filename=foto_url) }}" alt="Foto artesano" width="120" height="120">
+                {% endfor %}
+                </td>
+            </tr>
+            {% endfor %} 
+        </table>
+        {{ pagination.links }}
+    </div>
+    <a class="verArtesanosBotonVolver" id="botonRedirigir" href="{{ url_for('index') }}"> Volver a inicio </a>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script> const tbody = document.querySelector('tbody');
+
+        tbody.addEventListener('click', (event) => {
+            let target = event.target;
+            while (target !== tbody && target.nodeName !== 'TR') {
+                target = target.parentNode;
+            }
+        
+            if (target.nodeName === 'TR') {
+                const href = target.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            }
+        });
+        
+        botonVolver = document.getElementById("botonRedirigir");
+        botonVolver.addEventListener("click", function () { window.location.href = '../index/index.html' });
+        </script>
+{% endblock %}

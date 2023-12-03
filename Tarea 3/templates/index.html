@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Santiago 2023 {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/index.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="indexContenedor">
+    <div class="indexMensajeTitulo">
+        Bienvenido a la plataforma oficial de administración de los Juegos Panamericanos Chile 2023
+    </div>
+    <div class="indexMensajeTitulo2">
+        Seleccione una opción:
+    </div>
+    <div class="indexContenedorBotones">
+        <div class="indexMenu">
+            <b>Hinchas:</b>
+            <a href="{{ url_for('agregarHincha') }}"> Registrar hincha </a>
+            <a href="{{ url_for('verHinchas') }}"> Ver hinchas </a>
+
+        </div>
+        <div class="indexMenu">
+            <b>Artesanos: </b>
+            <a href="{{ url_for('agregarArtesano') }}">Registrar artesano</a>
+            <a href="{{ url_for('verArtesanos') }}"> Ver artesanos </a>
+        </div>
+        <div class="indexMenu">
+            <b> Información y estadísticas: </b>
+            <a href="{{ url_for('stats') }}"> Gráficos </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 

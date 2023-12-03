@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %} Registrar hincha {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/agregarHincha.css') }}">
+{% endblock %}
+
+{% block content %}
+    {% if error %}
+    <div class="error">
+        Los datos del Hincha no son válidos. Por favor, verifique e inténtelo de nuevo.
+
+    </div>
+    <div class="errorBoton">
+
+        <a href="{{ url_for('agregarHincha') }}"> Volver </a>
+    </div>
+    {% endif %}
+    {% if not error %}
+    <div class="agregarHinchaTitulo"> Registro hincha </div>
+    <form id="agregarHinchaContenedorFoms" name="agregarHinchaContenedorFoms" class="agregarHinchaContenedorFoms"
+        method="post" enctype="multipart/form-data" style="display: block">
+        <div class="agregarHinchaSubContenedor">
+            <div class="agregarHinchaForm">
+                <label for="nombre"> Nombre: </label>
+                <input name="nombre" type="text" id="nombre">
+                <div class="agregarHinchaFormError" id="errorNombre" hidden> Nombre inválido </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <label for="correo"> Email contacto: </label>
+                <input name="correo" type="email" id="correo">
+                <div class="agregarHinchaFormError" id="errorCorreo" hidden> Correo inválido </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <label for="numero"> Número celular contacto: </label>
+                <input name="numero" type="text" id="numero">
+                <div class="agregarHinchaFormError" id="errorNumero" hidden> Número inválido </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <div> Deporte(s) que interesa apoyar: </div>
+                <div id="menuDeportes"></div>
+                <div class="agregarHinchaFormError" id="errorDeportes" hidden> Elija entre 1 o 3 opciones </div>
+            </div>
+        </div>
+        <div class="agregarHinchaSubContenedor">
+            <div class="agregarHinchaForm">
+                <label for="regiones"> Región donde vive: </label>
+                <select name="region" id="regiones">
+                </select>
+                <div class="agregarHinchaFormError" id="errorRegion" hidden> Elija una opción </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <label for="comunas"> Comuna donde vive: </label>
+                <select name="comuna" id="comunas">
+                </select>
+                <div class="agregarHinchaFormError" id="errorComuna" hidden> Elija una opción </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <label for="transporte"> Modo de transporte: </label>
+                <select id="transporte" name="transporte">
+                    <option disabled selected value=""> Elija una opción </option>
+                    <option value='particular'> Particular </option>
+                    <option value='locomoción pública'> Locomoción pública </option>
+                </select>
+                <div class="agregarHinchaFormError" id="errorTransporte" hidden> Elija una opción </div>
+            </div>
+            <div class="agregarHinchaForm">
+                <label for="comentarios"> Comentarios adicionales: </label>
+                <input name="comentarios" type="text" id="comentarios">
+            </div>
+        </div>
+    </form>
+
+    <div class="agregarHinchaContenedorBotonEnviar">
+        <button class="agregarHinchaBotonEnviar" type="button" id="botonEnviar" style="display: block"> Registrar hincha
+        </button>
+    </div>
+
+    <div id="confirmacion" class="agregarHinchaConfirmacion" hidden>
+        <p> ¿Confirma el registro de este hincha? </p>
+        <div class="agregarHinchaBotonesConfirmacion">
+            <button type="submit" id="confirmarRegistro" name="confirmarRegistro"> Confirmar </button>
+            <button id="cancelarRegistro"> Volver al formulario </button>
+        </div>
+    </div>
+
+    <div id="formEnviado" class="agregarHinchaEnviado">
+        <p> Hemos recibido el registro de hincha. Muchas gracias. </p>
+        <button class="agregarHinchaBotonVolver" id="botonRedirigir"> Volver al inicio </button>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="../static/js/agregarHincha.js"></script>
+{% endblock %}  

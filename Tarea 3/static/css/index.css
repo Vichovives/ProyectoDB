@@ -1,0 +1,104 @@
+body {
+    align-items: center;
+    text-align: center;
+    background-color: rgb(4, 112, 254);
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    margin: 0px;
+}
+
+.globalHeader {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 20px 0; 
+    margin: 0; 
+    margin-bottom: 150px;
+}
+
+.globalHeaderTitulo {
+    padding-top: 45px;
+    font-size: 30px;
+}
+
+.globalFooterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: black;
+    padding-top: 80px;
+    bottom: 0;
+}
+
+.globalFooter {
+    text-align: center; 
+}
+
+.globalFooterFoto {
+    width: 360px;
+    height: 200px;
+}
+
+.indexContenedor {
+    min-height: 1000px;
+}
+
+.indexMensajeTitulo {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.indexMensajeTitulo2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+.indexContenedorBotones {
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.indexMenu {
+    padding: 20px;
+    margin: 80px;
+}
+
+a {
+    background-color: white;
+    color: rgb(47, 46, 46);
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px;
+    margin: 30px;
+    text-decoration: none
+}
+
+.fotoHeader {
+    background-color: black;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}
+
+.fotoHeader:hover {
+    text-decoration: none !important;
+    width: 150px;
+    height: 100px;
+    margin: 0;
+}

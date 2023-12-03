@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title> {% block title %}{% endblock %} </title>
+    {% block css %} {% endblock %}
+</head>
+
+<body>
+    <header class="globalHeader">
+        <a href="{{ url_for('index') }}" class="fotoHeader">
+            <img src="{{ url_for('static', filename='images/Santiago2023.png') }}" width="150" height="100">
+        </a>        <div class="globalHeaderTitulo"> Juegos Panamericanos Santiago 2023 </div>
+    </header>
+    {% block content %} {% endblock %}
+    <footer class="globalFooterContainer">
+        <div class="globalFooter">
+            <img class="globalFooterFoto" src="{{ url_for('static', filename='images/footer.png') }}" alt="">
+            <p>Todos los derechos reservados. Ver términos y condiciones</p>
+        </div>
+    </footer>
+    {% block javascript %} {% endblock %}
+</body>
+
+</html>

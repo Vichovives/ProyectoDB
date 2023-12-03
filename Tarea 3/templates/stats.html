@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Estadísticas {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/stats.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="indexContenedor">
+    <div class="indexMensajeTitulo">
+        Gráficos sobre hinchas y artesanos
+    </div>
+        <div class="ContenedorGraficos">
+            <div id="graficoHincha" class="grafico" name="graficoHincha"> </div>
+            <div id="graficoArtesano" class="grafico" name="graficoArtesano"> </div>
+        </div>
+        <a class="verArtesanosBotonVolver" id="botonRedirigir" href="{{ url_for('index') }}"> Volver a inicio </a>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="../static/js/stats.js"></script>
+    {% endblock %}  

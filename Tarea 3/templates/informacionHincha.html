@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} Información hincha {% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/informacionHincha.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="infoHinchaTitulo"> Información hincha </div>
+        <div class="infoHinchaContenedor">
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Nombre: </div>
+                <hr>
+                <div> {{ hincha["nombre"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Email contacto: </div>
+                <hr>
+                <div> {{ hincha["email"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Número celular contacto: </div>
+                <hr>
+                <div>  {{ hincha["celular"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Deporte(s) que interesa apoyar: </div>
+                <hr>
+                <div>  {{ hincha["deportes"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Región donde vive: </div>
+                <hr>
+                <div> {{ hincha["region"] }}</div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Comuna donde vive: </div>
+                <hr>
+                <div> {{ hincha["comuna"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Modo de transporte: </div>
+                <hr>
+                <div> {{ hincha["modo_transporte"] }} </div>
+            </div>
+            <div class="infoHinchaForm">
+                <div class="infoHinchaCampo"> Comentarios adicionales: </div>
+                <hr>
+                <div> {{ hincha["comentarios"] }}</div>
+                
+            </div>
+            <a class="infoHinchaBotonEnviar" href="{{ url_for('verHinchas') }}" type="button" id="botonVolver"> Volver </a>
+
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Ver hinchas {% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/verHinchas.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="verHinchasContenedor">
+    <div class="verHinchasMensajeTitulo">
+        Lista de hinchas registrados:
+    </div>
+    <div class="verHinchasContenedorTabla">
+        <table>
+            <thead>
+                <tr class="verHinchasTituloTabla">
+                    <th>Nombre</th>
+                    <th>Comuna</th>
+                    <th>Deportes</th>
+                    <th>Modo transporte</th>
+                    <th>Número celular</th>
+                </tr>
+            </thead>
+            {% for hincha in hinchas %}
+            <tr data-href="{{ url_for('informacionHincha', id=hincha[5]) }}">
+                <td>{{ hincha[0] }}</td> 
+                <td>{{ hincha[1] }}</td>
+                <td>
+                    {% for deporte in hincha[2] %}
+                    {{ deporte }}
+                    {% if not loop.last %}, {% endif %} 
+                    {% endfor %}
+                </td>
+                <td>{{ hincha[3] }}</td>       
+                <td>{{ hincha[4] }}</td>
+            </tr>
+            {% endfor %} 
+        </table>
+        {{ pagination.links }}
+    </div>
+    <a class="verHinchaBotonVolver" id="botonRedirigir" href="{{ url_for('index') }}"> Volver a inicio </a>
+</div>
+{% endblock %}
+
+{% block javascript %}
+    <script> const tbody = document.querySelector('tbody');
+
+        tbody.addEventListener('click', (event) => {
+            let target = event.target;
+            while (target !== tbody && target.nodeName !== 'TR') {
+                target = target.parentNode;
+            }
+        
+            if (target.nodeName === 'TR') {
+                const href = target.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            }
+        });
+        
+        botonVolver = document.getElementById("botonRedirigir");
+        botonVolver.addEventListener("click", function () { window.location.href = '../index/index.html' });
+        </script>
+{% endblock %}
